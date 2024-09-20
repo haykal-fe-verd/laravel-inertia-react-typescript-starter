@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
-import TopLink from "@/layouts/partials/toplink";
-import UserDropdown from "@/layouts/partials/user-dropdown";
-import { Icons } from "@/components/icons";
-import ThemeToggle from "@/components/theme-toggle";
+import TopLink from '@/layouts/partials/toplink';
+import UserDropdown from '@/layouts/partials/user-dropdown';
+import { Icons } from '@/components/icons';
+import ThemeToggle from '@/components/theme-toggle';
 
 function Topbar() {
   // states
-  const appName = import.meta.env.VITE_APP_NAME || "Laravel";
+  const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
   return (
     <header className="border-b bg-card text-card-foreground">

@@ -1,16 +1,19 @@
-import React from "react";
-import { Head, Link, useForm } from "@inertiajs/react";
-import { Eye, EyeOff, Loader2 } from "lucide-react";
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 
-import GuestLayout from "@/layouts/guest-layout";
-import { Icons } from "@/components/icons";
-import { Card, CardContent } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
-import InputError from "@/components/input-error";
-import { Separator } from "@/components/ui/separator";
-import { Button, buttonVariants } from "@/components/ui/button";
+import React from 'react';
+import { Head, Link, useForm } from '@inertiajs/react';
+import { Eye, EyeOff, Loader2 } from 'lucide-react';
+
+import GuestLayout from '@/layouts/guest-layout';
+import { Icons } from '@/components/icons';
+import { Card, CardContent } from '@/components/ui/card';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Checkbox } from '@/components/ui/checkbox';
+import InputError from '@/components/input-error';
+import { Separator } from '@/components/ui/separator';
+import { Button, buttonVariants } from '@/components/ui/button';
 
 interface LoginProps {
   canResetPassword: boolean;
@@ -18,21 +21,21 @@ interface LoginProps {
 function Login({ canResetPassword }: LoginProps) {
   // hooks
   const { data, setData, post, processing, errors, reset } = useForm({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
     remember: false,
   });
 
   // states
-  const appName = import.meta.env.VITE_APP_NAME || "Laravel";
+  const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
   const [showPassword, setShowPassword] = React.useState<boolean>(false);
 
   // events
   const onSubmit: React.FormEventHandler = (e) => {
     e.preventDefault();
 
-    post(route("login"), {
-      onFinish: () => reset("password"),
+    post(route('login'), {
+      onFinish: () => reset('password'),
     });
   };
   return (
@@ -44,7 +47,7 @@ function Login({ canResetPassword }: LoginProps) {
           <CardContent className="space-y-5 overflow-hidden p-5">
             <div className="flex h-full w-full items-center justify-center">
               <Link
-                href={route("home")}
+                href={route('home')}
                 className="flex justify-center gap-2 text-center"
               >
                 <Icons.Logo className="h-8 w-auto dark:fill-white" />
@@ -64,7 +67,7 @@ function Login({ canResetPassword }: LoginProps) {
                   placeholder="example@mail.com"
                   autoFocus
                   value={data.email}
-                  onChange={(e) => setData("email", e.target.value)}
+                  onChange={(e) => setData('email', e.target.value)}
                 />
 
                 <InputError message={errors.email} className="mt-2" />
@@ -75,11 +78,11 @@ function Login({ canResetPassword }: LoginProps) {
                 <div className="relative">
                   <Input
                     id="password"
-                    type={showPassword ? "text" : "password"}
+                    type={showPassword ? 'text' : 'password'}
                     value={data.password}
                     placeholder="••••••••"
                     autoComplete="new-password"
-                    onChange={(e) => setData("password", e.target.value)}
+                    onChange={(e) => setData('password', e.target.value)}
                   />
                   <div
                     onClick={() => setShowPassword(!showPassword)}
@@ -101,7 +104,7 @@ function Login({ canResetPassword }: LoginProps) {
                   <Checkbox
                     id="remember"
                     name="remember"
-                    onCheckedChange={(e) => setData("remember", Boolean(e))}
+                    onCheckedChange={(e) => setData('remember', Boolean(e))}
                     checked={data.remember}
                   />
                   <Label
@@ -114,8 +117,8 @@ function Login({ canResetPassword }: LoginProps) {
 
                 {canResetPassword && (
                   <Link
-                    href={route("password.request")}
-                    className={buttonVariants({ variant: "link" })}
+                    href={route('password.request')}
+                    className={buttonVariants({ variant: 'link' })}
                   >
                     Forgot your password?
                   </Link>
@@ -133,9 +136,9 @@ function Login({ canResetPassword }: LoginProps) {
             </form>
 
             <p className="text-center text-xs">
-              Dont have an account?{" "}
+              Dont have an account?{' '}
               <Link
-                href={route("register")}
+                href={route('register')}
                 className="text-indigo-500 hover:underline"
               >
                 Register here.

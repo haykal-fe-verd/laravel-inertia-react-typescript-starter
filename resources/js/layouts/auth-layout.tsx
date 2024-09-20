@@ -1,12 +1,12 @@
-import React from "react";
-import { usePage } from "@inertiajs/react";
-import { toast } from "sonner";
+import React from 'react';
+import { usePage } from '@inertiajs/react';
+import { toast } from 'sonner';
 
-import { PageProps } from "@/types";
-import { useThemeStore, applyTheme } from "@/stores/use-theme-store";
+import { PageProps } from '@/types';
+import { useThemeStore, applyTheme } from '@/stores/use-theme-store';
 
-import { Toaster } from "@/components/ui/sonner";
-import Topbar from "@/layouts/partials/topbar";
+import { Toaster } from '@/components/ui/sonner';
+import Topbar from '@/layouts/partials/topbar';
 
 function AuthLayout({ children }: React.PropsWithChildren) {
   // hooks
@@ -30,7 +30,7 @@ function AuthLayout({ children }: React.PropsWithChildren) {
     }
 
     if (message) {
-      toast.message("Message:", {
+      toast.message('Message:', {
         description: message,
       });
     }

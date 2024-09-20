@@ -1,6 +1,6 @@
-import { LucideIcon, Monitor, Moon, Sun } from "lucide-react";
+import { LucideIcon, Monitor, Moon, Sun } from 'lucide-react';
 
-import { Theme } from "@/stores/use-theme-store";
+import { Theme } from '@/stores/use-theme-store';
 
 interface ThemeModeType {
   name: string;
@@ -9,7 +9,7 @@ interface ThemeModeType {
 }
 
 export const themeMode: ThemeModeType[] = [
-  { name: "System", value: "system", icon: Monitor },
-  { name: "Light", value: "light", icon: Sun },
-  { name: "Dark", value: "dark", icon: Moon },
+  { name: 'System', value: 'system', icon: Monitor },
+  { name: 'Light', value: 'light', icon: Sun },
+  { name: 'Dark', value: 'dark', icon: Moon },
 ];

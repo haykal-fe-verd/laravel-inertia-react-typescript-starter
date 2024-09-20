@@ -1,15 +1,15 @@
-import React from "react";
-import { Head, Link, useForm } from "@inertiajs/react";
-import { Loader2 } from "lucide-react";
+import React from 'react';
+import { Head, Link, useForm } from '@inertiajs/react';
+import { Loader2 } from 'lucide-react';
 
-import GuestLayout from "@/layouts/guest-layout";
-import { Icons } from "@/components/icons";
-import { Card, CardContent } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import InputError from "@/components/input-error";
-import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
+import GuestLayout from '@/layouts/guest-layout';
+import { Icons } from '@/components/icons';
+import { Card, CardContent } from '@/components/ui/card';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import InputError from '@/components/input-error';
+import { Separator } from '@/components/ui/separator';
+import { Button } from '@/components/ui/button';
 
 interface ForgotPasswordProps {
   status?: string;
@@ -17,17 +17,17 @@ interface ForgotPasswordProps {
 function ForgotPassword({ status }: ForgotPasswordProps) {
   // hooks
   const { data, setData, post, processing, errors } = useForm({
-    email: "",
+    email: '',
   });
 
   // states
-  const appName = import.meta.env.VITE_APP_NAME || "Laravel";
+  const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
   // events
   const onSubmit: React.FormEventHandler = (e) => {
     e.preventDefault();
 
-    post(route("password.email"));
+    post(route('password.email'));
   };
   return (
     <GuestLayout>
@@ -38,7 +38,7 @@ function ForgotPassword({ status }: ForgotPasswordProps) {
           <CardContent className="space-y-5 overflow-hidden p-5">
             <div className="flex h-full w-full items-center justify-center">
               <Link
-                href={route("home")}
+                href={route('home')}
                 className="flex justify-center gap-2 text-center"
               >
                 <Icons.Logo className="h-8 w-auto dark:fill-white" />
@@ -70,7 +70,7 @@ function ForgotPassword({ status }: ForgotPasswordProps) {
                   placeholder="example@mail.com"
                   autoFocus
                   value={data.email}
-                  onChange={(e) => setData("email", e.target.value)}
+                  onChange={(e) => setData('email', e.target.value)}
                 />
 
                 <InputError message={errors.email} className="mt-2" />
@@ -87,9 +87,9 @@ function ForgotPassword({ status }: ForgotPasswordProps) {
             </form>
 
             <p className="text-center text-xs">
-              Remembered?{" "}
+              Remembered?{' '}
               <Link
-                href={route("login")}
+                href={route('login')}
                 className="text-indigo-500 hover:underline"
               >
                 Login here.

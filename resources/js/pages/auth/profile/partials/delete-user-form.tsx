@@ -1,6 +1,9 @@
-import React from "react";
-import { useForm } from "@inertiajs/react";
-import { Eye, EyeOff, Loader2 } from "lucide-react";
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+
+import React from 'react';
+import { useForm } from '@inertiajs/react';
+import { Eye, EyeOff, Loader2 } from 'lucide-react';
 
 import {
   Dialog,
@@ -9,11 +12,11 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import InputError from "@/components/input-error";
-import { Input } from "@/components/ui/input";
+} from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
+import InputError from '@/components/input-error';
+import { Input } from '@/components/ui/input';
 
 function DeleteUserForm() {
   // hooks
@@ -26,7 +29,7 @@ function DeleteUserForm() {
     errors,
     clearErrors,
   } = useForm({
-    password: "",
+    password: '',
   });
 
   // states
@@ -38,7 +41,7 @@ function DeleteUserForm() {
   const onSubmit: React.FormEventHandler = (e) => {
     e.preventDefault();
 
-    destroy(route("profile.destroy"), {
+    destroy(route('profile.destroy'), {
       preserveScroll: true,
       onSuccess: () => setOpen(false),
       onError: () => {
@@ -92,12 +95,12 @@ function DeleteUserForm() {
                 <Input
                   id="password"
                   ref={passwordInput}
-                  type={showPassword ? "text" : "password"}
+                  type={showPassword ? 'text' : 'password'}
                   value={data.password}
                   placeholder="••••••••"
                   autoComplete="new-password"
                   autoFocus
-                  onChange={(e) => setData("password", e.target.value)}
+                  onChange={(e) => setData('password', e.target.value)}
                 />
                 <div
                   onClick={() => setShowPassword(!showPassword)}

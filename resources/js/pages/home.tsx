@@ -1,6 +1,7 @@
-import { Link, Head } from "@inertiajs/react";
-import { PageProps } from "@/types";
-import GuestLayout from "@/layouts/guest-layout";
+import React from 'react';
+import { Link, Head } from '@inertiajs/react';
+import { PageProps } from '@/types';
+import GuestLayout from '@/layouts/guest-layout';
 
 export default function Welcome({
   user,
@@ -8,10 +9,10 @@ export default function Welcome({
   phpVersion,
 }: PageProps<{ laravelVersion: string; phpVersion: string }>) {
   const handleImageError = () => {
-    document.getElementById("screenshot-container")?.classList.add("!hidden");
-    document.getElementById("docs-card")?.classList.add("!row-span-1");
-    document.getElementById("docs-card-content")?.classList.add("!flex-row");
-    document.getElementById("background")?.classList.add("!hidden");
+    document.getElementById('screenshot-container')?.classList.add('!hidden');
+    document.getElementById('docs-card')?.classList.add('!row-span-1');
+    document.getElementById('docs-card-content')?.classList.add('!flex-row');
+    document.getElementById('background')?.classList.add('!hidden');
   };
 
   return (
@@ -22,6 +23,7 @@ export default function Welcome({
           id="background"
           className="absolute -left-20 top-0 max-w-[877px]"
           src="https://laravel.com/assets/img/welcome/background.svg"
+          alt="Background"
         />
         <div className="relative flex min-h-screen flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
           <div className="relative w-full max-w-2xl px-6 lg:max-w-7xl">
@@ -42,7 +44,7 @@ export default function Welcome({
               <nav className="-mx-3 flex flex-1 justify-end">
                 {user ? (
                   <Link
-                    href={route("dashboard")}
+                    href={route('dashboard')}
                     className="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                   >
                     Dashboard
@@ -50,13 +52,13 @@ export default function Welcome({
                 ) : (
                   <>
                     <Link
-                      href={route("login")}
+                      href={route('login')}
                       className="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                     >
                       Log in
                     </Link>
                     <Link
-                      href={route("register")}
+                      href={route('register')}
                       className="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                     >
                       Register
@@ -88,7 +90,7 @@ export default function Welcome({
                       alt="Laravel documentation screenshot"
                       className="hidden aspect-video h-full w-full flex-1 rounded-[10px] object-cover object-top drop-shadow-[0px_4px_34px_rgba(0,0,0,0.25)] dark:block"
                     />
-                    <div className="absolute -bottom-16 -left-16 h-40 w-[calc(100%+8rem)] bg-gradient-to-b from-transparent via-white to-white dark:via-zinc-900 dark:to-zinc-900"></div>
+                    <div className="absolute -bottom-16 -left-16 h-40 w-[calc(100%+8rem)] bg-gradient-to-b from-transparent via-white to-white dark:via-zinc-900 dark:to-zinc-900" />
                   </div>
 
                   <div className="relative flex items-center gap-6 lg:items-end">
@@ -256,79 +258,79 @@ export default function Welcome({
                     </h2>
 
                     <p className="mt-4 text-sm/relaxed">
-                      Laravel's robust library of first-party tools and
-                      libraries, such as{" "}
+                      Laravel&apos;s robust library of first-party tools and
+                      libraries, such as{' '}
                       <a
                         href="https://forge.laravel.com"
                         className="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white dark:focus-visible:ring-[#FF2D20]"
                       >
                         Forge
                       </a>
-                      ,{" "}
+                      ,{' '}
                       <a
                         href="https://vapor.laravel.com"
                         className="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white"
                       >
                         Vapor
                       </a>
-                      ,{" "}
+                      ,{' '}
                       <a
                         href="https://nova.laravel.com"
                         className="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white"
                       >
                         Nova
                       </a>
-                      ,{" "}
+                      ,{' '}
                       <a
                         href="https://envoyer.io"
                         className="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white"
                       >
                         Envoyer
                       </a>
-                      , and{" "}
+                      , and{' '}
                       <a
                         href="https://herd.laravel.com"
                         className="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white"
                       >
                         Herd
-                      </a>{" "}
+                      </a>{' '}
                       help you take your projects to the next level. Pair them
-                      with powerful open source libraries like{" "}
+                      with powerful open source libraries like{' '}
                       <a
                         href="https://laravel.com/docs/billing"
                         className="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white"
                       >
                         Cashier
                       </a>
-                      ,{" "}
+                      ,{' '}
                       <a
                         href="https://laravel.com/docs/dusk"
                         className="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white"
                       >
                         Dusk
                       </a>
-                      ,{" "}
+                      ,{' '}
                       <a
                         href="https://laravel.com/docs/broadcasting"
                         className="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white"
                       >
                         Echo
                       </a>
-                      ,{" "}
+                      ,{' '}
                       <a
                         href="https://laravel.com/docs/horizon"
                         className="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white"
                       >
                         Horizon
                       </a>
-                      ,{" "}
+                      ,{' '}
                       <a
                         href="https://laravel.com/docs/sanctum"
                         className="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white"
                       >
                         Sanctum
                       </a>
-                      ,{" "}
+                      ,{' '}
                       <a
                         href="https://laravel.com/docs/telescope"
                         className="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white"

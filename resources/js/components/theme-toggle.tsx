@@ -1,34 +1,34 @@
-import React from "react";
-import { Monitor, Moon, Sun } from "lucide-react";
+import React from 'react';
+import { Monitor, Moon, Sun } from 'lucide-react';
 
-import { useThemeStore } from "@/stores/use-theme-store";
-import { themeMode } from "@/constants/theme";
+import { useThemeStore } from '@/stores/use-theme-store';
+import { themeMode } from '@/constants/theme';
 
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
+} from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
 
 function ThemeToggle() {
   // hooks
   const { theme, setTheme } = useThemeStore();
 
   // events
-  const ThemeIcon = () => {
+  function ThemeIcon() {
     switch (theme) {
-      case "light":
+      case 'light':
         return <Sun className="h-4 w-4" />;
-      case "dark":
+      case 'dark':
         return <Moon className="h-4 w-4" />;
-      case "system":
+      case 'system':
         return <Monitor className="h-4 w-4" />;
       default:
         return <Monitor className="h-4 w-4" />;
     }
-  };
+  }
 
   return (
     <DropdownMenu>

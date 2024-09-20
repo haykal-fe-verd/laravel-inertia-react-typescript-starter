@@ -1,11 +1,15 @@
-import { Config } from 'ziggy-js';
-import { User } from "@/types/user";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
-export type PageProps<T extends Record<string, unknown> = Record<string, unknown>> = T & {
+import { Config } from 'ziggy-js';
+import { User } from '@/types/user';
+
+export type PageProps<
+  T extends Record<string, unknown> = Record<string, unknown>,
+> = T & {
   user: User;
-  ziggy: Config & { location: string, query: any };
-  status?: string,
-  success?: string,
-  error?: string,
-  message?: string
+  ziggy: Config & { location: string; query: any };
+  status?: string;
+  success?: string;
+  error?: string;
+  message?: string;
 };

@@ -1,12 +1,12 @@
-import React from "react";
-import { Head, Link, useForm } from "@inertiajs/react";
-import { Loader2 } from "lucide-react";
+import React from 'react';
+import { Head, Link, useForm } from '@inertiajs/react';
+import { Loader2 } from 'lucide-react';
 
-import GuestLayout from "@/layouts/guest-layout";
-import { Icons } from "@/components/icons";
-import { Card, CardContent } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { Button, buttonVariants } from "@/components/ui/button";
+import GuestLayout from '@/layouts/guest-layout';
+import { Icons } from '@/components/icons';
+import { Card, CardContent } from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
+import { Button, buttonVariants } from '@/components/ui/button';
 
 interface VerifyEmailProps {
   status?: string;
@@ -16,13 +16,13 @@ function VerifyEmail({ status }: VerifyEmailProps) {
   const { post, processing } = useForm({});
 
   // states
-  const appName = import.meta.env.VITE_APP_NAME || "Laravel";
+  const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
   // events
   const onSubmit: React.FormEventHandler = (e) => {
     e.preventDefault();
 
-    post(route("verification.send"));
+    post(route('verification.send'));
   };
   return (
     <GuestLayout>
@@ -33,7 +33,7 @@ function VerifyEmail({ status }: VerifyEmailProps) {
           <CardContent className="space-y-5 overflow-hidden p-5">
             <div className="flex h-full w-full items-center justify-center">
               <Link
-                href={route("home")}
+                href={route('home')}
                 className="flex justify-center gap-2 text-center"
               >
                 <Icons.Logo className="h-8 w-auto dark:fill-white" />
@@ -50,7 +50,7 @@ function VerifyEmail({ status }: VerifyEmailProps) {
               another.
             </p>
 
-            {status === "verification-link-sent" && (
+            {status === 'verification-link-sent' && (
               <div className="mb-5 text-sm font-medium text-green-500">
                 A new verification link has been sent to the email address you
                 provided during registration.
@@ -69,10 +69,10 @@ function VerifyEmail({ status }: VerifyEmailProps) {
                 </Button>
 
                 <Link
-                  href={route("logout")}
+                  href={route('logout')}
                   method="post"
                   as="button"
-                  className={buttonVariants({ variant: "destructive" })}
+                  className={buttonVariants({ variant: 'destructive' })}
                 >
                   Logout
                 </Link>

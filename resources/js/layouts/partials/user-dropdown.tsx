@@ -1,9 +1,9 @@
-import React from "react";
-import { router, usePage } from "@inertiajs/react";
+import React from 'react';
+import { router, usePage } from '@inertiajs/react';
 
-import { PageProps } from "@/types";
-import { cn, getInitial } from "@/lib/utils";
-import { authNavigation } from "@/constants/navigation";
+import { PageProps } from '@/types';
+import { cn, getInitial } from '@/lib/utils';
+import { authNavigation } from '@/constants/navigation';
 
 import {
   DropdownMenu,
@@ -13,9 +13,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+} from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 function UserDropdown() {
   // hooks
@@ -26,7 +26,7 @@ function UserDropdown() {
 
   // events
   const handleLogout = () => {
-    router.post(route("logout"));
+    router.post(route('logout'));
   };
 
   return (
@@ -34,7 +34,7 @@ function UserDropdown() {
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="relative h-10 w-10 rounded-full">
-            <Avatar className={cn("h-10 w-10")}>
+            <Avatar className={cn('h-10 w-10')}>
               <AvatarImage src={user?.avatar} alt={`@${user.name}`} />
               <AvatarFallback>{falbackAvatar}</AvatarFallback>
             </Avatar>
@@ -50,13 +50,13 @@ function UserDropdown() {
             </div>
           </DropdownMenuLabel>
           <DropdownMenuGroup className="block md:hidden">
-            {authNavigation.map((item, index) => (
+            {authNavigation.map((item) => (
               <DropdownMenuItem
-                key={index}
+                key={item.href}
                 onClick={() => router.get(item.href)}
                 className={cn(
-                  "",
-                  ziggy.location === item.href && "font-bold text-primary",
+                  '',
+                  ziggy.location === item.href && 'font-bold text-primary'
                 )}
               >
                 {item.name}
@@ -65,7 +65,7 @@ function UserDropdown() {
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
-            <DropdownMenuItem onClick={() => router.get(route("profile.edit"))}>
+            <DropdownMenuItem onClick={() => router.get(route('profile.edit'))}>
               Profile
             </DropdownMenuItem>
           </DropdownMenuGroup>

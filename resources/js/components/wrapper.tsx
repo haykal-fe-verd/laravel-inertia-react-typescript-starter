@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from '@/components/ui/card';
 
 interface WrapperProps {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ interface WrapperProps {
 }
 function Wrapper({ children, className }: WrapperProps) {
   return (
-    <div className={cn("w-full pt-10", className)}>
+    <div className={cn('w-full pt-10', className)}>
       <div className="container mx-auto px-0 md:px-5">
         <Card className="rounded-none md:rounded-lg">
           <CardContent className="overflow-hidden p-5">{children}</CardContent>
